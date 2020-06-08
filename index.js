@@ -12,6 +12,7 @@ const ejs = require('ejs');
 const path = require('path');
 
 const indexRouter = require('./router/index');
+const boardRouter = require('./router/board');
 
 const app = express();
 const port = process.env.PORT || 8123;
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
+app.use('/board', boardRouter);
 
 app.listen(port, '0.0.0.0', function(){
 
